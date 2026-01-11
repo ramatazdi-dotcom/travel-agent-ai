@@ -4,7 +4,7 @@ from fpdf import FPDF
 from datetime import datetime
 
 # --- SETUP HALAMAN ---
-st.set_page_config(page_title="AI Agent - Travel Assistant", page_icon="✈️", layout="wide")
+st.set_page_config(page_title="AI Agent - Travel Assistant", page_icon="🤖", layout="wide")
 
 # --- INITIALIZE SESSION STATE ---
 if "itinerary_content" not in st.session_state:
@@ -64,7 +64,7 @@ def ask_gemini(prompt_text):
         return None
 
 # --- UI UTAMA ---
-st.title("✈️ Ai Agent - Travel Assistant")
+st.title("🤖🗺️ Ai Agent - Travel Assistant")
 st.markdown("Asisten Perjalanan Pribadi Anda. Menyediakan Informasi Yang Cepat, Lengkap, dan Profesional.")
 
 # --- WARNING & PANDUAN ---
