@@ -4,7 +4,7 @@ from fpdf import FPDF
 from datetime import datetime
 
 # --- SETUP HALAMAN ---
-st.set_page_config(page_title="Travel Vision AI", page_icon="✈️", layout="wide")
+st.set_page_config(page_title="AI Agent - Travel Assistant", page_icon="✈️", layout="wide")
 
 # --- INITIALIZE SESSION STATE ---
 if "itinerary_content" not in st.session_state:
@@ -18,7 +18,7 @@ class TravelPDF(FPDF):
 
     def header(self):
         self.set_font('Arial', 'B', 16)
-        self.cell(0, 10, 'TRAVEL VISION AI - PROPOSAL', ln=True, align='C')
+        self.cell(0, 10, 'AI AGENT TRAVEL - PROPOSAL', ln=True, align='C')
         self.set_font('Arial', 'I', 11)
         self.cell(0, 8, f'Disiapkan Khusus untuk: {self.client_name}', ln=True, align='C')
         self.set_line_width(0.5)
@@ -30,7 +30,7 @@ class TravelPDF(FPDF):
         self.set_font('Arial', 'I', 8)
         self.cell(0, 5, f'Powered by Gemini 2.5 Flash | Generated on {datetime.now().strftime("%d-%m-%Y")}', ln=True, align='C')
         current_year = datetime.now().year
-        self.cell(0, 5, f'Copyright (c) {current_year} Travel Vision AI. All rights reserved.', ln=True, align='C')
+        self.cell(0, 5, f'Copyright (c) {current_year} AI Agent - Travel Assistant by Rama Tazdi. All rights reserved.', ln=True, align='C')
 
 def clean_text(text):
     return text.encode('latin-1', 'replace').decode('latin-1')
@@ -64,8 +64,8 @@ def ask_gemini(prompt_text):
         return None
 
 # --- UI UTAMA ---
-st.title("✈️ Travel Vision AI")
-st.markdown("Asisten Perjalanan Pribadi Anda. Cepat, Lengkap, Profesional.")
+st.title("✈️ Ai Agent - Travel Assistant")
+st.markdown("Asisten Perjalanan Pribadi Anda. Menyediakan Informasi Yang Cepat, Lengkap, dan Profesional.")
 
 # --- WARNING & PANDUAN ---
 if not api_key:
@@ -154,8 +154,7 @@ st.markdown("---")
 st.markdown(
     """
     <div style='text-align: center; color: grey; font-size: 12px;'>
-        Copyright © 2026 Travel Vision AI. All rights reserved.<br>
-        Developed with ❤️ using Gemini 2.5 Flash
+        Copyright © 2026 AI Agent - Travel Assistant by Rama Tazdi. All rights reserved.<br>
     </div>
     """, 
     unsafe_allow_html=True
